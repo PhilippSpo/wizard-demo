@@ -1,0 +1,59 @@
+<head>
+  <title>planifica:wizard demo</title>
+</head>
+
+<template name="layout">
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="http://planifica.meteor.com">
+	        <img alt="Brand" src="/pc.png" style="max-height: 25px;">
+	      </a>
+	    </div>
+	  </div>
+	</nav>
+	<div class="container">
+		{{> yield}}
+	</div>
+</template>
+
+<template name="home">
+	<div class="title-wrapper">
+		<div class="center-block">
+			<h2>Wizard Demo</h2>
+			<div id="startWizard" class="btn btn-primary">Try out the wizard here!</div>
+			<h3>Results</h3>
+		</div>
+	</div>
+	{{>charts}}
+</template>
+
+<template name="setupWizard">
+  {{> wizard id="setup-wizard" route="setup" steps=steps}}
+</template>
+
+<template name="setupStepOne">
+<div class="form-wrapper">
+  {{#autoForm schema=schema doc=data id="setup-step-one-form"}}
+
+    {{> afQuickField name="name" placeholder="some random username"}}
+
+    {{> afQuickField name="location" placeholder="something stupid here please :)"}}
+
+    <button type="submit" class="btn btn-success btn-lg pull-right">Next</button>
+
+  {{/autoForm}}
+  </div>
+</template>
+
+<template name="setupStepTwo">
+<div class="form-wrapper">
+  {{#autoForm schema=schema doc=data id="setup-step-two-form"}}
+
+    {{> afQuickField name="os" placeholder="something stupid here please :)"}}
+
+    <button type="submit" class="btn btn-success btn-lg pull-right">Submit</button>
+
+  {{/autoForm}}
+  </div>
+</template>
