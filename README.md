@@ -1,4 +1,5 @@
 wizard-demo
 ===========
 
-Demo of the meteor planifica:wizard package: https://github.com/Planifica/meteor-wizard
+Demo Code of the meteor planifica:wizard package: https://github.com/Planifica/meteor-wizard<br>
+Demo here: http://wizard.meteor.com/
