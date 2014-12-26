@@ -7,7 +7,6 @@ buildLocationChart = function() {
 			total = total + location.amount;
 		}
 	});
-	console.log(total);
 	locations.forEach(function(location) {
 		var amount = 0;
 		if (location.hasOwnProperty('amount')) {
@@ -58,9 +57,7 @@ buildOsChart = function() {
 			total = total + os.amount;
 		}
 	});
-	console.log(total);
 	opsys.forEach(function(os) {
-		console.log(os);
 		var amount = 0;
 		if (os.hasOwnProperty('amount')) {
 			amount = os.amount / total;

@@ -2,20 +2,20 @@ if (Meteor.isClient) {
   Template.home.events({
     'click #startWizard': function() {
       Router.go('setup', {
-        step: 'accountInfo'
+        step: 'origin'
       });
     }
   });
   Template.setupWizard.helpers({
     steps: function() {
       return [{
-        id: 'accountInfo',
-        title: 'Step 1. Your account',
+        id: 'origin',
+        title: 'Your Origin',
         template: 'setupStepOne',
         formId: 'setup-step-one-form'
       }, {
-        id: 'confirmInfo',
-        title: 'Step 2. Confirm',
+        id: 'os',
+        title: 'Your OS',
         template: 'setupStepTwo',
         formId: 'setup-step-two-form',
         onSubmit: function(data, mergedData) {
