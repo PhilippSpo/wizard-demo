@@ -34,3 +34,18 @@ Meteor.methods({
 		});
 	}
 });
+
+Meteor.publish('getCounter', function (counterName) {
+  var cursor = Continents.find();
+  var pollingInterval = 10 * 1000; //10 seconds
+
+  return new Counter(counterName, cursor, pollingInterval);
+});
+
+Meteor.publish('continents', function() {
+	return Continents.find();
+});
+
+Meteor.publish('operatingSystems', function() {
+	return OperatingSystems.find();
+});

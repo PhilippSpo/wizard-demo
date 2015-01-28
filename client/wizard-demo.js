@@ -1,4 +1,15 @@
 if (Meteor.isClient) {
+  Template.home.helpers({
+    number: function() {
+      return Session.get("numberEntries");
+    }
+  });
+  Template.home.rendered = function() {
+    Meteor.subscribe('getCounter', 'counter-continents');
+    Tracker.autorun(function() {
+      Session.set("numberEntries",Counter.get('counter-continents'));
+    });
+  };
   Template.home.events({
     'click #startWizard': function() {
       Router.go('setup', {
