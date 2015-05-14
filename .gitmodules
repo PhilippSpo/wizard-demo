@@ -1,0 +1,3 @@
+[submodule "packages/meteor-wizard"]
+	path = packages/meteor-wizard
+	url = https://github.com/Planifica/meteor-wizard.git
