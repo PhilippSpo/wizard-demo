@@ -7,7 +7,7 @@ if (Meteor.isClient) {
   Template.home.rendered = function() {
     Meteor.subscribe('getCounter', 'counter-continents');
     Tracker.autorun(function() {
-      Session.set("numberEntries",Counter.get('counter-continents'));
+      Session.set("numberEntries", Counter.get('counter-continents'));
     });
   };
   Template.home.events({
